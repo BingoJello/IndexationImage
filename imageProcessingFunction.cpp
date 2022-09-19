@@ -140,6 +140,7 @@ void histogramme(byte **img, int nrh, int nch, double *hist) {
         hist[i] = 0.0;
     }
 
+
     //classifie l'image suivant les différents niveaux de gris
     for (int j = 0; j <= nrh; j++) {
         for (int k = 0; k <= nch; k++) {
@@ -293,7 +294,8 @@ int colored(double* histogrammeBW ,double* histogrammeC,double SEUIL) {
 }
 
 void matriceDesDistance(double **disttable, int size) {
-    FILE *matrice = fopen("D:/c++/IndexationImage/img/matrice.csv", "wa");
+    printf("toto");
+    FILE *matrice = fopen("D:/c++/IndexationImage/matrice.csv", "wa");
     double matricedistance[size][size];
     double distance = 0.0;
     double distanceMax = 0.0;
@@ -389,6 +391,7 @@ int process(char *myRepo) {
         printf("Problème au niveau de la fermeture du dossier");
         return 1;
     }
+
     double **matrice = (double **) malloc(size * sizeof(double *));
     for (int i = 0; i < size; i++) {
         matrice[i] = (double *) malloc(256 * sizeof(double));
@@ -426,7 +429,7 @@ int process(char *myRepo) {
         if(imgType == NULL){
 
         }
-        else if (!strcmp(imgType, "jpg")) {
+        else if (!strcmp(imgType, "ppm")) {
             printf("%s\n", currentImg->d_name);
             double tauxR, tauxG, tauxB = 0.0;
             double meanGradient = 0.0;
@@ -473,6 +476,7 @@ int process(char *myRepo) {
                 tauxG = 0.33;
                 tauxB = 0.33;
             }
+
             detectionBords(imageMatrix, gradient, 20, &meanGradient, &nbPixelContour, nrl, nrh, ncl, nch);
             fprintf(f, "%s.jpg,%d,%lf,%lf,%lf,%lf,%lf,", currentImg->d_name, color, nbPixelContour, tauxR, tauxG, tauxB,
                     meanGradient);
