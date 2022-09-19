@@ -17,8 +17,8 @@
  * Copyright (c) 2000-2001 LIS-UPMC
  */
 
-#ifndef _NRALLOC_H_
-#define _NRALLOC_H_
+#ifndef INDEXATIONIMAGE_NRALLOC_H
+#define INDEXATIONIMAGE_NRALLOC_H
 
 #ifdef __cplusplus
 #pragma message ("C++")
@@ -210,12 +210,12 @@ IMAGE_EXPORT(void)  bmatrix_map_roi00 (byte **m,long nrl0, long nrh0, long ncl0,
 IMAGE_EXPORT(void)  smatrix_map_roi00 (short **m,long nrl0, long nrh0, long ncl0, long nch0, long nrl1, long nrh1, long ncl1, long nch1);
 IMAGE_EXPORT(void) usmatrix_map_roi00(ushort **m,long nrl0, long nrh0, long ncl0, long nch0, long nrl1, long nrh1, long ncl1, long nch1);
 
-                                 /*
- * a partir d'une image       [nrl0..nrh0]x[ncl0..nch0]
- * remappe m, pour que la roi [nrl1..nrh1]x[ncl1..nch1]
- * ait comme coordonnees dans le nouveau repere
- * [0..nrh1-nrl1+1][0..nch1-nch0+1]
- */
+/*
+* a partir d'une image       [nrl0..nrh0]x[ncl0..nch0]
+* remappe m, pour que la roi [nrl1..nrh1]x[ncl1..nch1]
+* ait comme coordonnees dans le nouveau repere
+* [0..nrh1-nrl1+1][0..nch1-nch0+1]
+*/
 
 IMAGE_EXPORT(void) bmatrix_unmap_roi00 (byte **m, long nrl0, long nrh0, long ncl0, long nch0, long nrl1, long nrh1, long ncl1, long nch1);
 IMAGE_EXPORT(void) smatrix_unmap_roi00(short **m, long nrl0, long nrh0, long ncl0, long nch0, long nrl1, long nrh1, long ncl1, long nch1);
@@ -486,4 +486,5 @@ IMAGE_EXPORT(float**) convert_matrix(float *a, long nrl, long nrh, long ncl, lon
 
 #else
 #pragma message(" Warning : attemp to re-include nralloc.h")
-#endif /* _NRALLOC_H_ */
+
+#endif //INDEXATIONIMAGE_NRALLOC_H

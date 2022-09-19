@@ -8,8 +8,9 @@
  * modif : 22/02/2001 : new types : float32 & float64
  */
 
-#ifndef __DEF_H__
-#define __DEF_H__
+#ifndef INDEXATIONIMAGE_DEF_H
+#define INDEXATIONIMAGE_DEF_H
+
 
 #ifdef __cplusplus
 #pragma message ("C++")
@@ -60,7 +61,7 @@ extern "C" {
 
 #ifdef PROGRESS_INFO_ENABLED
 #define PROGRESS_INFO(str, i, i0, i1) // ProgressInfo(str, i,i0, i1);
-#else 
+#else
 #define PROGRESS_INFO(str, i, i0, i1) // no progress
 #endif
 
@@ -85,7 +86,7 @@ extern "C" {
 
 #ifdef NDEBUG
 #pragma message ("Info : DEBUG is OFF")
-#define LL_DEBUG(x) 
+#define LL_DEBUG(x)
 #define DEBUG(x)
 #define VERBOSE(x)
 #define LL_OPTIMIZE(x) x
@@ -209,70 +210,70 @@ typedef signed int sint;
 /* --- bitfield --- */
 /* ---------------- */
 typedef struct {
-  unsigned int b0  : 1;
-  unsigned int b1  : 1;
-  unsigned int b2  : 1;
-  unsigned int b3  : 1;
-  unsigned int b4  : 1;
-  unsigned int b5  : 1;
-  unsigned int b6  : 1;
-  unsigned int b7  : 1;
-  unsigned int b8  : 1;
-  unsigned int b9  : 1;
-  unsigned int b10 : 1;
-  unsigned int b11 : 1;
-  unsigned int b12 : 1;
-  unsigned int b13 : 1;
-  unsigned int b14 : 1;
-  unsigned int b15 : 1;
-  unsigned int b16 : 1;
-  unsigned int b17 : 1;
-  unsigned int b18 : 1;
-  unsigned int b19 : 1;
-  unsigned int b20 : 1;
-  unsigned int b21 : 1;
-  unsigned int b22 : 1;
-  unsigned int b23 : 1;
-  unsigned int b24 : 1;
-  unsigned int b25 : 1;
-  unsigned int b26 : 1;
-  unsigned int b27 : 1;
-  unsigned int b28 : 1;
-  unsigned int b29 : 1;
-  unsigned int b30 : 1;
-  unsigned int b31 : 1;
+    unsigned int b0  : 1;
+    unsigned int b1  : 1;
+    unsigned int b2  : 1;
+    unsigned int b3  : 1;
+    unsigned int b4  : 1;
+    unsigned int b5  : 1;
+    unsigned int b6  : 1;
+    unsigned int b7  : 1;
+    unsigned int b8  : 1;
+    unsigned int b9  : 1;
+    unsigned int b10 : 1;
+    unsigned int b11 : 1;
+    unsigned int b12 : 1;
+    unsigned int b13 : 1;
+    unsigned int b14 : 1;
+    unsigned int b15 : 1;
+    unsigned int b16 : 1;
+    unsigned int b17 : 1;
+    unsigned int b18 : 1;
+    unsigned int b19 : 1;
+    unsigned int b20 : 1;
+    unsigned int b21 : 1;
+    unsigned int b22 : 1;
+    unsigned int b23 : 1;
+    unsigned int b24 : 1;
+    unsigned int b25 : 1;
+    unsigned int b26 : 1;
+    unsigned int b27 : 1;
+    unsigned int b28 : 1;
+    unsigned int b29 : 1;
+    unsigned int b30 : 1;
+    unsigned int b31 : 1;
 } bitfield32;
 
 typedef struct {
-  unsigned int b0  : 1;
-  unsigned int b1  : 1;
-  unsigned int b2  : 1;
-  unsigned int b3  : 1;
-  unsigned int b4  : 1;
-  unsigned int b5  : 1;
-  unsigned int b6  : 1;
-  unsigned int b7  : 1;
-  unsigned int b8  : 1;
-  unsigned int b9  : 1;
-  unsigned int b10 : 1;
-  unsigned int b11 : 1;
-  unsigned int b12 : 1;
-  unsigned int b13 : 1;
-  unsigned int b14 : 1;
-  unsigned int b15 : 1;
+    unsigned int b0  : 1;
+    unsigned int b1  : 1;
+    unsigned int b2  : 1;
+    unsigned int b3  : 1;
+    unsigned int b4  : 1;
+    unsigned int b5  : 1;
+    unsigned int b6  : 1;
+    unsigned int b7  : 1;
+    unsigned int b8  : 1;
+    unsigned int b9  : 1;
+    unsigned int b10 : 1;
+    unsigned int b11 : 1;
+    unsigned int b12 : 1;
+    unsigned int b13 : 1;
+    unsigned int b14 : 1;
+    unsigned int b15 : 1;
 } bitfield16;
-    
+
 typedef struct {
-  unsigned int b0  : 1;
-  unsigned int b1  : 1;
-  unsigned int b2  : 1;
-  unsigned int b3  : 1;
-  unsigned int b4  : 1;
-  unsigned int b5  : 1;
-  unsigned int b6  : 1;
-  unsigned int b7  : 1;
+    unsigned int b0  : 1;
+    unsigned int b1  : 1;
+    unsigned int b2  : 1;
+    unsigned int b3  : 1;
+    unsigned int b4  : 1;
+    unsigned int b5  : 1;
+    unsigned int b6  : 1;
+    unsigned int b7  : 1;
 } bitfield8;
-   
+
 /* ------------------------------- */
 /* --- 8, 16, 32, 64 bit types --- */
 /* ------------------------------- */
@@ -422,8 +423,8 @@ typedef struct { int32 x; int32 b; int32 g; int32 r; } bgrx32;
 /* --- RGB Macro --- */
 /* ----------------- */
 
-#define RGB32CAST8(s,d) d.r=(byte)s.r; d.g=(byte)s.g; d.b=(byte)s.b 
-#define RGBX32CAST8(s,d) d.r=(byte)s.r; d.g=(byte)s.g; d.b=(byte)s.b; d.x=(byte)s.x  
+#define RGB32CAST8(s,d) d.r=(byte)s.r; d.g=(byte)s.g; d.b=(byte)s.b
+#define RGBX32CAST8(s,d) d.r=(byte)s.r; d.g=(byte)s.g; d.b=(byte)s.b; d.x=(byte)s.x
 
 #define RGB8_NOT(s,d)      d.r=!s.r;       d.g=!s.g;       d.b=!s.b
 #define RGB8_OR(s1,s2,d)   d.r=s1.r|s2.r;  d.g=s1.g|s2.g;  d.b=s1.b|s2.b
@@ -446,8 +447,8 @@ typedef struct { int32 x; int32 b; int32 g; int32 r; } bgrx32;
 #define RGB8_ABS(s,d) d.r=abs(s.r); d.g=abs(s.g); d.b=abs(s.b)
 #define RGBX8_ABS(s,d) d.r=abs(s.r); d.g=abs(s.g); d.b=abs(s.b); d.x=abs(s.x)
 
-#define RGB8_SAT(s, sat, d)  if(s.r>sat.r) d.r=sat.r; if(s.g>sat.g) d.g=sat.g; if(s.b>sat.b) d.b=sat.b 
-#define RGB8_SATK(s, sat, d) if(s.r>sat)   d.r=sat;   if(s.g>sat)   d.g=sat;   if(s.b>sat)   d.b=sat; 
+#define RGB8_SAT(s, sat, d)  if(s.r>sat.r) d.r=sat.r; if(s.g>sat.g) d.g=sat.g; if(s.b>sat.b) d.b=sat.b
+#define RGB8_SATK(s, sat, d) if(s.r>sat)   d.r=sat;   if(s.g>sat)   d.g=sat;   if(s.b>sat)   d.b=sat;
 
 #define RGBX8_SAT(s, sat, d)  if(s.r>sat.r) d.r=sat.r; if(s.g>sat.g) d.g=sat.g; if(s.b>sat.b) d.b=sat.b; if(s.x>sat.x) s.x=sat.x
 #define RGBX8_SATK(s, sat, d) if(s.r>sat)   d.r=sat;   if(s.g>sat)   d.g=sat;   if(s.b>sat)   d.b=sat;   if(s.x>sat)     s.x=sat
@@ -462,8 +463,8 @@ typedef struct { int32 x; int32 b; int32 g; int32 r; } bgrx32;
 #define RGB8_MUL(s1,s2,d) d.r=s1.r*s2.r; d.g=s1.g*s2.g; d.b=s1.b*s2.b
 #define RGB8_DIV(s1,s2,d) d.r=s1.r/s2.r; d.g=s1.g/s2.g; d.b=s1.b/s2.b
 
-#define RGB8_SET(s,d) d.r=s.r; d.g=s.g; d.b=s.b 
-#define RGB8_SETNEG(s,d) d.r=-s.r; d.g=-s.g; d.b=-s.b 
+#define RGB8_SET(s,d) d.r=s.r; d.g=s.g; d.b=s.b
+#define RGB8_SETNEG(s,d) d.r=-s.r; d.g=-s.g; d.b=-s.b
 
 #define RGB8_ACC(s,d) d.r+=s.r; d.g+=s.g; d.b+=s.b
 #define RGB8_SCC(s,d) d.r-=s.r; d.g-=s.g; d.b-=s.b
@@ -509,4 +510,4 @@ typedef struct { int32 x; int32 b; int32 g; int32 r; } bgrx32;
 }
 #endif
 
-#endif /* __DEF_H__ */
+#endif //INDEXATIONIMAGE_DEF_H
