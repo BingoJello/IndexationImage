@@ -1,7 +1,3 @@
-//
-// Created by arthur on 19/09/2022.
-//
-
 #ifndef INDEXATIONIMAGE_MASK_H
 #define INDEXATIONIMAGE_MASK_H
 

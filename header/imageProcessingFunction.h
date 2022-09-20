@@ -7,35 +7,21 @@
 
 #include "../nrc/def.h"
 
-/*
- * PrintMask allows you to print the selected mask in the console.
- * VerifyMask allows you to post process and verify that the value from the mask convolution is correct.
- * ApplyMastToMatrix applies the selected 3*3 mask to the targeted matrix.
- * Binarises replaces each pixel by a white or a black one in function of its value.
- */
-
-//TODO : FREE WHAT SHOULD BE
-
-void printMask(const int mask[3][3]);
-int verifyRGBValue(int value);
 void initMatrix(byte **matrix, long nrh, long nch);
-void applyMaskToMatrix(int mask[3][3], byte **matrix, byte **outputMatrix, int matrix_max_x, int matrix_max_y);
-void applyMaskToMatrix_bounded(const int mask[3][3], byte **matrix, byte **outputMatrix, int nrl, int nrh, int ncl, int nch);
-void binariesPicture(byte **matrix, byte **output, int matrix_max_x, int matrix_max_y, int limit);
-void greyScale(rgb8 **matrix, byte **output, int matrix_max_x, int matrix_max_y);
-void histogramme(byte** img,int nrh , int nch,double *histogramme);
-void histogrammeRGB(rgb8 **img, int nrh, int nch, double *histogrammeR, double * histogrammeG, double* histogrammeB);
+void calculateGradient(const int mask[3][3], byte **intputMatrix, byte **outputMatrix, int nrl, int nrh, int ncl, int nch);
+void graysScale(rgb8 **inputMatrix, byte **outputMatrix, int nrh, int nch);
+void histogramme(byte **binarizedImg, int nrh, int nch, double *hist);
+void histogrammeWithColor(rgb8 **binarizedImg, int nrh, int nch, double *histR, double * histG, double* histB);
 double bhattacharyyaDistance(double* hist1,double* hist2);
-void tauxDeCouleurs(rgb8 **img,double *tauxr, double *tauxg, double *tauxb, long nrl, long nrh, long ncl, long nch);
-void detectionBords (byte** img, byte** output, long threshold, double* moyenneNormeGradient, double* nbPixelBord, long nrl , long nrh,long ncl,long nch);
+void calculateColorRate(rgb8 **img, double* rateR, double *rateG, double *rateB, long nrl, long nrh, long ncl, long nch);
+void pixelBorderDetection(byte** img, byte** output, long threshold, double* meanGradient, double* nbPixelBord, long nrl , long nrh,long ncl,long nch);
 void sauvegardeHistogramme(double* histogramme,FILE* f);
 int process(char *nomdossier);
-int colored(double*histogrammeBW ,double* histogrammeC,double SEUIL);
-void matriceDesDistance(double **disttable,int size);
-void sauvegardeTableHistogramme(double *histogramme, FILE *f,char * nom,int *index);
+int colored(double* histWithoutColor ,double* histColor,double threshold);
+void calculateDistanceMatrix(double **disttable, int size, int formulaDistance);
 double euclidienneDistance(double* hist1,double* hist2);
+void sauvegardeTableHistogramme(double *histogramme, FILE *f,char * nom,int *index);
 extern const int horizontal_gradient [3][3] ;
 extern const int vertical_gradient[3][3];
-//void b_distToCSV(char *directory);
 
 #endif //INDEXATIONIMAGE_IMAGEPROCESSINGFUNCTION_H
