@@ -33,3 +33,9 @@ CREATE TABLE dist_signature_img(
     img2_name VARCHAR2(10),
     distance_similarity float
 );
+
+CREATE TABLE hist_img (
+    name_img VARCHAR2(10),
+    index_hist int,
+    value_hist float
+);

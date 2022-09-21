@@ -79,7 +79,6 @@ void histogramme(byte **binarizedImg, int nrh, int nch, double *hist) {
         hist[i] = 0.0;
     }
 
-    //classifie l'image suivant les différents niveaux de gris
     for (int j = 0; j <= nrh; j++) {
         for (int k = 0; k <= nch; k++) {
             int index = binarizedImg[j][k];
@@ -434,9 +433,9 @@ int process(char *myRepo) {
             if (color) {
                 calculateColorRate(image,&tauxR,&tauxG,&tauxB, nrl, nrh, ncl, nch);
             } else {
-                tauxR = 0.33;
-                tauxG = 0.33;
-                tauxB = 0.33;
+                tauxR = 0.0;
+                tauxG = 0.0;
+                tauxB = 0.0;
             }
 
             pixelBorderDetection(imageMatrix, gradient, 20, &meanGradient, &nbPixelContour,
