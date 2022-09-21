@@ -8,5 +8,6 @@
 int main() {
     process("D:/c++/IndexationImage/img/");
 
+
     return 0;
 }
