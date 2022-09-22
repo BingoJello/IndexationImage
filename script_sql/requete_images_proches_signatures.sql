@@ -69,9 +69,3 @@ BEGIN
             END LOOP;
     END IF;
 END;
-
--- Autre facon --
-
-SELECT img1_name, img2_name, distance_similarity FROM dist_signature_img
-WHERE img1_name = '23.jpg' AND distance_similarity < 5 AND img2_name != img1_name
-ORDER BY(distance_similarity) ASC

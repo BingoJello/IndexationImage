@@ -54,7 +54,7 @@ END IF;
 END IF;
 END LOOP;
 
-    DBMS_OUTPUT.PUT_LINE('Calcul des 10 images les plus proches avec les moyennes de gradient');
+    DBMS_OUTPUT.PUT_LINE('Calcul des 10 images les plus proches avec la moyenne des gradients');
     DBMS_OUTPUT.PUT_LINE('-----------------------');
 
     IF nearests_img.COUNT = 0 THEN

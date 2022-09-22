@@ -213,7 +213,7 @@ void pixelBorderDetection(byte **img, byte **output, long threshold, double *mea
         }
     }
     *meanGradient = *meanGradient / ((nrh - nrl - 1) * (nch - ncl - 1));
-    (*nbPixelBord) = *meanGradient / ((nrh - nrl - 1) * (nch - ncl - 1));
+    (*nbPixelBord) = (*nbPixelBord) / ((nrh - nrl - 1) * (nch - ncl - 1));
 }
 
 /**
