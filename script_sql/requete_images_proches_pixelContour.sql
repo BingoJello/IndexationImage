@@ -26,7 +26,7 @@ SELECT * INTO origin_line FROM multimedia where name = origin_img_name;
 WHILE x = 1 LOOP
         min_score_contour := MIN_VALUE;
 FOR line in m LOOP
-            score_contour := ABS(origin_line.meangradient - line.meangradient);
+            score_contour := ABS(origin_line.pixelcontour - line.pixelcontour);
             IF score_contour < min_score_contour AND line.name != origin_line.name THEN
                 y := 0;
 FOR i in 1..nearests_img.COUNT LOOP
